@@ -1,3 +1,4 @@
+import IconAdd from './icons/iconAdd';
 import IconClose from './icons/iconClose';
 import { ReactNode } from 'react';
 
@@ -24,7 +25,20 @@ export const Sidebar = ({
         } md:ml-0`}
       >
         <div className="flex flex-col w-64 p-2 bg-gray-900">
-          barra mesmo
+          <div className="flex items-center p-3 rounded-md text-sm cursor-pointer border border-white/20 hover:bg-gray-500/20">
+            <IconAdd
+              width={16}
+              height={16}
+              className="mr-3"
+            />
+            Nova conversa
+          </div>
+
+          <nav className="flex-1 pt-2 overflow-y-auto">
+            {children}
+          </nav>
+
+          <div className="border-t border-gray-700 pt-2"></div>
         </div>
 
         <div
