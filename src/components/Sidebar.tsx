@@ -1,17 +1,23 @@
 import IconAdd from './icons/iconAdd';
 import IconClose from './icons/iconClose';
+import IconTrash from './icons/iconTrash';
 import { ReactNode } from 'react';
+import { SidebarButton } from './SidebarButton';
 
 type Props = {
   children: ReactNode;
   open: boolean;
   onClose: () => void;
+  onClear: () => void;
+  onNewChat: () => void;
 };
 
 export const Sidebar = ({
   open,
   onClose,
   children,
+  onClear,
+  onNewChat,
 }: Props) => {
   return (
     <section
@@ -24,7 +30,10 @@ export const Sidebar = ({
           open ? 'ml-0' : '-ml-96'
         } md:ml-0`}
       >
-        <div className="flex flex-col w-64 p-2 bg-gray-900">
+        <div
+          onClick={onNewChat}
+          className="flex flex-col w-64 p-2 bg-gray-900"
+        >
           <div className="flex items-center p-3 rounded-md text-sm cursor-pointer border border-white/20 hover:bg-gray-500/20">
             <IconAdd
               width={16}
@@ -38,7 +47,13 @@ export const Sidebar = ({
             {children}
           </nav>
 
-          <div className="border-t border-gray-700 pt-2"></div>
+          <div className="border-t border-gray-700 pt-2">
+            <SidebarButton
+              icon={<IconTrash width={16} height={16} />}
+              label="Limpar todas as conversas"
+              onClick={onClear}
+            />
+          </div>
         </div>
 
         <div
