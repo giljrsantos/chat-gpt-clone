@@ -51,7 +51,7 @@ export const Sidebar = ({
             <SidebarButton
               icon={<IconTrash width={16} height={16} />}
               label="Limpar todas as conversas"
-              onClick={onClear}
+              buttonOnClick={onClear}
             />
           </div>
         </div>

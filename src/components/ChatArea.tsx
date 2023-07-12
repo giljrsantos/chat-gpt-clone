@@ -1,4 +1,5 @@
 import { Chat } from '@/types/Chat';
+import { ChatMessegeItem } from './chatMessegeItem';
 import { ChatPlaceholder } from './ChatPlaceholder';
 
 type Props = {
@@ -10,9 +11,9 @@ export const ChatArea = ({ chat }: Props) => {
     <section className="flex-auto h-0 overflow-y-scroll">
       {!chat && <ChatPlaceholder />}
       {chat &&
-        chat.messages.map((item) => {
-          <div>***</div>;
-        })}
+        chat.messages.map((item) => (
+          <ChatMessegeItem key={item.id} item={item} />
+        ))}
     </section>
   );
 };
