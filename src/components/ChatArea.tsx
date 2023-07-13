@@ -1,5 +1,5 @@
 import { Chat } from '@/types/Chat';
-import { ChatMessegeItem } from './chatMessegeItem';
+import { ChatMessegeItem } from './ChatMessegeItem';
 import { ChatPlaceholder } from './ChatPlaceholder';
 
 type Props = {
