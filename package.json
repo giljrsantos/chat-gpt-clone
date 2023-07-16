@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "formatcorrect": "npx prettier --write \"src/**/*.tsx\" \"src/**/*.css\"",
     "format": "npx prettier --write \"src/**/*.tsx\" \"src/**/*.css\" \"src/**/*.html\"",
     "build": "next build",
     "start": "next start",

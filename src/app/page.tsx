@@ -24,9 +24,9 @@ const Page = () => {
   const openSidebar = () => setSidebarOpened(true);
   const closeSidebar = () => setSidebarOpened(false);
 
-  const handleClearConversations = () => { };
+  const handleClearConversations = () => {};
 
-  const handleNewChat = () => { };
+  const handleNewChat = () => {};
 
   return (
     <main className="flex min-h-screen bg-gpt-gray text-white">
