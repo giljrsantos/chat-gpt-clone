@@ -2,6 +2,7 @@
 
 import { Chat } from '@/types/Chat';
 import { ChatArea } from '@/components/ChatArea';
+import { Footer } from '@/components/Footer';
 import { Header } from '@/components/Header';
 import { Sidebar } from '@/components/Sidebar';
 import { useState } from 'react';
@@ -21,12 +22,16 @@ const Page = () => {
     ],
   });
 
+  const [AILoading, setAILoading] = useState(false);
+
   const openSidebar = () => setSidebarOpened(true);
   const closeSidebar = () => setSidebarOpened(false);
 
   const handleClearConversations = () => {};
 
   const handleNewChat = () => {};
+
+  const handleSendMessege = () => {};
 
   return (
     <main className="flex min-h-screen bg-gpt-gray text-white">
@@ -47,6 +52,11 @@ const Page = () => {
         />
 
         <ChatArea chat={chatActive} />
+
+        <Footer
+          disabled={AILoading}
+          onSendMessege={handleSendMessege}
+        />
       </section>
     </main>
   );
