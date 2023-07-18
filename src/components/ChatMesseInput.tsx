@@ -63,7 +63,7 @@ export const ChatMesseInput = ({
       ></textarea>
 
       <div
-        onClick={() => handleSendMessege}
+        onClick={handleSendMessege}
         className={`self-end p-1 cursor-pointer rounded
             ${
               text.length
