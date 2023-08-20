@@ -7,6 +7,7 @@ import { ChatArea } from '@/components/ChatArea';
 import { Footer } from '@/components/Footer';
 import { Header } from '@/components/Header';
 import { Sidebar } from '@/components/Sidebar';
+import { SidebarChatButton } from '@/components/SidebarChatButtton';
 import { v4 as uuidv4 } from 'uuid';
 
 const Page = () => {
@@ -95,6 +96,16 @@ const Page = () => {
     setAILoading(true);
   };
 
+  const handleSelectChat = () => {
+
+  }
+  const handleDeleteChat = () => {
+
+  }
+  const handleEditChat = () => {
+
+  }
+
   return (
     <main className="flex min-h-screen bg-gpt-gray text-white">
       <Sidebar
@@ -103,13 +114,22 @@ const Page = () => {
         onClear={handleClearConversations}
         onNewChat={handleNewChat}
       >
-        ***
+        {chatList.map(item => (
+          <SidebarChatButton
+            key={item.id}
+            chatItem={item}
+            active={item.id === chatActiveId}
+            onClick={handleSelectChat}
+            onDelete={handleDeleteChat}
+            onEdit={handleEditChat}
+          />
+        ))}
       </Sidebar>
 
       <section className="flex flex-col w-full">
         <Header
           openSidebarClick={openSidebar}
-          title={`Bla bla bla`}
+          title={chatActive ? chatActive.title : 'Novo conversa'}
           newChatClick={handleNewChat}
         />
 
